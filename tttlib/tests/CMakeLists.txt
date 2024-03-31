@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.12)
 
 add_executable(test_events test_events.cpp)
 target_link_libraries(test_events tttlib)
@@ -23,3 +23,5 @@ target_include_directories(test_engine PRIVATE ..)
 add_test (NAME "test_engine_basic_events" COMMAND test_engine basic_events)
 add_test (NAME "test_engine_winning_moves" COMMAND test_engine winning_moves)
 add_test (NAME "test_engine_draw" COMMAND test_engine draw)
+
+set_target_properties (test_events test_fields test_engine  PROPERTIES CXX_STANDARD 20)
