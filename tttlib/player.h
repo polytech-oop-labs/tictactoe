@@ -6,7 +6,7 @@
 
 
 /**
- * This exception is thrown by player if it can make a move.
+ * This exception is thrown by player if it cannot make a move.
  */
 struct PlayerMoveException: public std::exception {
     std::string reason;
