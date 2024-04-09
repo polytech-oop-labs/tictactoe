@@ -9,6 +9,8 @@ add_executable (mytest my_test.cpp)
 target_link_libraries (mytest tttplayer)
 # Add headers from tttplayer and from tttlib
 target_include_directories (mytest PUBLIC .. ../../tttlib)
+# Do not forget to add CXX20
+set_target_properties (tttplayer PROPERTIES CXX_STANDARD 20)
 
 # Add command for test execution, in our case just `mytest` itself
 add_test (NAME "my_test_for_player" COMMAND mytest)
