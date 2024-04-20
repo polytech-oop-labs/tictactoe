@@ -11,4 +11,6 @@ endif()
 enable_testing ()
 add_subdirectory ("tttlib")
 add_subdirectory ("tttplayer")
-
+if (TTT_BUILD_REMOTE)
+    add_subdirectory ("tttremote")
+endif()
