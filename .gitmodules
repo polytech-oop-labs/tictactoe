@@ -1,0 +1,6 @@
+[submodule "tttremote/extern/libzmq"]
+	path = tttremote/extern/libzmq
+	url = https://github.com/zeromq/libzmq.git
+[submodule "tttremote/extern/cppzmq"]
+	path = tttremote/extern/cppzmq
+	url = https://github.com/zeromq/cppzmq.git
