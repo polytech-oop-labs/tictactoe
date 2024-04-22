@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.12)
 
-find_library (ZMQ_LIB libzmq${CMAKE_STATIC_LIBRARY_SUFFIX} PATHS extern/build)
+find_library (ZMQ_LIB libzmq.a libzmq-mt-4_3_6.lib PATHS extern/build)
 
 if (NOT ZMQ_LIB)
     message (FATAL_ERROR 
