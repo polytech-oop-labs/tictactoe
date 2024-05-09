@@ -1,14 +1,16 @@
 cmake_minimum_required (VERSION 3.12)
 
 # Here you can add all the source files for player
-set (PLAYER_SOURCES my_player.cpp)
+set (PLAYER_SOURCES my_player.cpp ncurses_observer.cpp)
+
+find_package(Curses REQUIRED)
 
 # Create a library for your player
 add_library (tttplayer STATIC ${PLAYER_SOURCES})
 # Link game library to your player
-target_link_libraries (tttplayer tttlib)
+target_link_libraries (tttplayer tttlib ${CURSES_LIBRARIES})
 # Add headers from `tttlib` to your library
-target_include_directories (tttplayer PUBLIC ../tttlib .)
+target_include_directories (tttplayer PUBLIC ../tttlib . ${CURSES_INCLUDE_DIR})
 
 # You must set this standard to compile, because tttlib some of headers uses
 # CXX20 features

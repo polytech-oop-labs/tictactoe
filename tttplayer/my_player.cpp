@@ -1,5 +1,6 @@
 #include "my_player.h"
 #include <cstdlib>
+#include <unistd.h>
 
 static field_index_t rand_int(field_index_t min, field_index_t max) {
     return min + rand() % (max - min + 1);
@@ -14,6 +15,7 @@ Point RandomPlayer::play(const GameView& game) {
             .y = rand_int(b.min.y, b.max.y),
         };
     } while(game.get_state().field->get_value(result) != Mark::None);
+    sleep(1);
     return result;
 }
 
