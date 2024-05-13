@@ -55,7 +55,5 @@ int main() {
   game.set_player(player2);
   /// Starts game until someone wins.
   game.play_game();
-  getch();
-  endwin();
   return 0;
 }
