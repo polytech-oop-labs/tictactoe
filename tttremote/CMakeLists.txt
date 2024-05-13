@@ -20,7 +20,7 @@ endif()
 
 set (ZMQ_HEADERS ${ZMQLIB_HEADER} ${CPPZMQ_HEADER})
 
-add_library (tttremote STATIC messaging_driver.cpp zmq_drivers.cpp)
+add_library (tttremote STATIC messaging_driver.cpp zmq_drivers.cpp messages.cpp)
 target_include_directories (tttremote PUBLIC . ../tttlib ${ZMQ_HEADERS})
 target_link_libraries (tttremote PUBLIC tttlib ${ZMQ_LIB})
 
