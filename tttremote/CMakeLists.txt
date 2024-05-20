@@ -27,3 +27,5 @@ target_link_libraries (example_server ${ZMQ_LIB})
 add_executable (example_client example_client.cpp)
 target_include_directories (example_client PUBLIC ${ZMQ_HEADERS})
 target_link_libraries (example_client ${ZMQ_LIB})
+
+add_subdirectory ("tests")
