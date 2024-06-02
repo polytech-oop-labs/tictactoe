@@ -20,10 +20,10 @@ endif()
 
 set (ZMQ_HEADERS ${ZMQLIB_HEADER} ${CPPZMQ_HEADER})
 
-add_executable (example_server example_server.cpp)
-target_include_directories (example_server PUBLIC ${ZMQ_HEADERS})
-target_link_libraries (example_server ${ZMQ_LIB})
+add_library (tttremote STATIC messaging_driver.cpp zmq_drivers.cpp messages.cpp)
+target_include_directories (tttremote PUBLIC . ../tttlib ${ZMQ_HEADERS})
+target_link_libraries (tttremote PUBLIC tttlib ${ZMQ_LIB})
 
-add_executable (example_client example_client.cpp)
-target_include_directories (example_client PUBLIC ${ZMQ_HEADERS})
-target_link_libraries (example_client ${ZMQ_LIB})
+set_target_properties (tttremote PROPERTIES CXX_STANDARD 20)
+
+add_subdirectory("tests")
